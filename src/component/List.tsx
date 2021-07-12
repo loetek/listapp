@@ -154,32 +154,29 @@ export default function List() {
         )}
         <thead>
           <tr>
-            <th scope="col" colSpan={1}>
+            <th scope="col" colSpan={2}>
               Task
             </th>{" "}
             <th scope="col" colSpan={1}>
               Date
             </th>{" "}
-            <th scope="col" colSpan={1}>
+            {/* <th scope="col" colSpan={1}>
               Finished
-            </th>
+            </th> */}
             <th scope="col" colSpan={1}></th>
           </tr>
         </thead>
         {/* Conditional rendering for the found item in the search. */}
         {isFound && listEntries[searchIndex] && (
-          <tbody style={{ backgroundColor: "#fff" }} id="table">
-            <tr
-              style={{ backgroundColor: "white !important" }}
-              key={listEntries[searchIndex].id}
-            >
+          <tbody id="table">
+            <tr key={listEntries[searchIndex].id}>
               <td scope="col" colSpan={1}>
                 {listEntries[searchIndex].entry}
               </td>
               <td scope="col" colSpan={1}>
                 {listEntries[searchIndex].date}
               </td>
-              <td scope="col" colSpan={1}>
+              {/* <td scope="col" colSpan={1}>
                 <label> Done Yet?</label>
                 {"  "}
                 <input
@@ -191,7 +188,7 @@ export default function List() {
                     handleIsDone(listEntries[searchIndex].id);
                   }}
                 ></input>
-              </td>
+              </td> */}
               <td scope="col" colSpan={1}>
                 <button
                   className="btn btn-danger"
@@ -210,13 +207,13 @@ export default function List() {
           <tbody id="table">
             {listEntries.map((item: any) => (
               <tr key={item.id}>
-                <td scope="col" colSpan={1}>
+                <td scope="col" colSpan={2}>
                   {item.entry}
                 </td>
                 <td scope="col" colSpan={1}>
                   {item.date}
                 </td>
-                <td scope="col" colSpan={1}>
+                {/* <td scope="col" colSpan={1}>
                   <label> Done Yet?</label>
                   {"  "}
                   <input
@@ -229,7 +226,7 @@ export default function List() {
                       handleIsDone(item.id);
                     }}
                   ></input>
-                </td>
+                </td> */}
                 <td scope="col" colSpan={1}>
                   <button
                     className="btn btn-danger"
